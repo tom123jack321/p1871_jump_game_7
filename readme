@@ -33,7 +33,7 @@ P4. Consecutive "1" : "n_conse_1" counts the number of consecutive "1". When it 
 return "false"
 
 3. Complexity
-Each index is visited only once, so the time complexity is O(n).
+In the worst case, each index is visited only once, so the time complexity is O(n).
 
 4. Results
 Result : submitted to LeetCode and passed all tests with 34ms runtime (beats 97.93% of users with c++)
