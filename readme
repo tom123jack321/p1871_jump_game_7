@@ -1,0 +1,42 @@
+Recursive solution to LeetCode problem "1306. Jump Game III"
+
+1. Description 
+See https://leetcode.com/problems/jump-game-iii/description/ or below. The problem is marked "Medium".
+Given an array of non-negative integers arr, you are initially positioned at start index of the array. 
+When you are at index i, you can jump to i + arr[i] or i - arr[i], check if you can reach any index with value 0.
+Notice that you can not jump outside of the array at any time.
+
+Example 1:
+Input: arr = [4,2,3,0,3,1,2], start = 5
+Output: true
+Explanation: 
+All possible ways to reach at index 3 with value 0 are: 
+index 5 -> index 4 -> index 1 -> index 3 
+index 5 -> index 6 -> index 4 -> index 1 -> index 3 
+
+2. My solution
+There doesn't seem to be a shortcut without travelling through all paths. A recursive approach is my first choice.
+2.1. Recursion formula : J(i) = J(i+a[i]) + J(i-a[i]), where "J" denotes recursive function "jump_2" and "i" the index of array "arr"
+2.2. Returned quantity : bool, with 0 as false, 1 as true (in accordance wit the formula)
+2.3. Input parameters : vector "spot" marking whether a position of "arr" has been visited, with 1 as yes, 0 as no; 
+others like "arr", index "a" and vector of positions of value 0, are clear
+2.4. Boundary condition : for the function to terminate ("return"), check whether it reaches any element in "v0", 
+whether access to "arr" elements crosses either boundary, whether the position "a" has been visited
+
+3. Complexity
+Analysis on general case does not seem easy. In the worst case that one (and only one) element of "arr" equals 0 and 
+all elements are visited, the function "jump_2" is invoked 1+2*(n-1) many times (n being length of "arr"). Thus, the 
+time complexity is O(n).
+
+4. Results
+Result : submitted to LeetCode and passed all tests with 28ms runtime (beats 86.89% of users with c++) and 40.66MB 
+memory (beats 30.99% of users with c++) (why it consumes so much memory is beyond me).
+
+5. Troubleshooting
+I share this for fun with no warranty absolutely. Should anyone find any bugs, please email me.
+
+6. Author
+Yiyi HUANG (yhuangcm@connect.ust.hk)
+
+7. License
+GPL3.0
