@@ -1,7 +1,7 @@
 // My solution to LeetCode problem "1871. Jump Game VII"
 // https://leetcode.com/problems/jump-game-vii/description/
 // Furthest search, backtrack, visit marks and consecutive "1"
-// P1. Furthest search : Let "a" start from index 0. Jump furthest by "maxJump", if the end location "b" (s[b]) is "0", move "a" there, otherwise move "b" back step by step. Vector "va" records each "a".
+// P1. Furthest search : Let "a" start from index 0. Jump furthest by "maxJump", if the end location "b" has "0" (s[b]), move "a" there, otherwise move "b" back step by step. Vector "va" records each "a".
 // P2. Backtrack : when (1) "a" becomes near the last element s[c-1], or (2) the jumps in "P1" encounter no "0", move "a" back along vector "va"
 // P3. Visited mark : vector "spot" marks each index visited
 // P4. Consecutive "1" : "n_conse_1" counts the number of consecutive "1". When it equals "maxJump", return "false"
